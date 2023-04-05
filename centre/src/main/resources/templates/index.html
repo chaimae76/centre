@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<style>
+*{
+margin:0;
+padding:0;
+font-family: sans-serif;
+}
+.banner{
+background-color: black;
+width: 100%;
+height: 100vh;
+background-image: linear-;
+gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(img/cntr.png);
+background-size: cover;
+background-position: center;
+}
+.navbar{
+ width: 85%;
+ margin: auto;
+ padding: 35px 0;
+ display: flex;
+ align-items: center;
+}
+.header{
+background-color:pink;
+height:80px;
+margin:10px;
+}
+nav ul li{
+list-style-type:none;
+display:inline-block;
+padding:10px;
+}
+ul li a{
+color:#fff;
+letter-spacing:0.1rem;
+}
+ul li a:hover{
+color:#900C3F;
+text-decoration:underline;
+}
+.menu li{
+float:left;
+padding:35px;
+
+}
+.menu li a{
+text-decoration:none;
+
+}
+form{
+padding:35px;
+text-align:right;
+}
+.content{
+max-width: 650px;
+margin: 60px 100px;
+}
+ .content .info .h2{
+color: pink;
+font-size: 55px;
+text-transform: uppercase;
+font-weight: 800;
+letter-spacing: 2px;
+line-height: 60px;
+}
+ .content .info .p{
+background-color: pink;
+font-size: 16px;
+font-weight: 500;
+margin-bottom: 40px;
+}
+.info{
+padding: 70px 0;
+color: white;
+max-width: 90%;
+margin-left: auto;
+margin-right: auto;
+}
+.info h1{
+ font-size: 75px;
+ line-height: 2;
+ margin-bottom: 1rem;
+}
+.info p{
+font-size: 1.6rem;
+line-height:1.5;
+letter-spacing: 1px;
+margin-bottom: 2rem;
+}
+#showcase{
+height: 50vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+text-align: center;
+padding: 0 20px;
+}
+#showcase h2{
+font-size: 50px;
+}
+#showcase p{
+font-size: 30px;
+}
+#showcase .button{
+ font-size: 18px;
+ text-decoration: none;
+ color: pink;
+ border: pink 1px solid;
+ padding: 10px 20px;
+ border-radius: 10px;
+ margin-top: 20px;
+}
+#showcase .button:hover{
+background: pink;
+color:#fff;
+
+}
+.p{
+font-size: 20px;
+font-family: cursive;
+text-align:justify;
+}
+.box input{
+positin: relative;
+display: inline-block;
+font-size: 20px;
+box-sizing: border-box;
+transition: .5s;
+}
+.box input[type="text"]{
+border-radius:25px 0 0 25px;
+background: #fff;
+border: none;
+outline: none;
+padding:0 25px;
+}
+.box input[type="submit"]{
+position: relative;
+border-radius:25px 0 0 25px;
+border: none;
+outline:none;
+cursor: pointer;
+background: black;
+color:#fff;
+}
+</style>
+<div class="banner">
+<div class="navbar">
+ <img src="/centre_beauty/image/cntr.png" class="logo">
+     <ul class="menu">
+       <li><a href="">accueil</a></li>
+       <li><a href="reserver">rendez-vous</a></li>
+       <li><a href="produits">nos produits</a></li>
+       <li><a href="service">services</a></li>
+       <li><a href="#">contacts</a></li>
+        <li><a href="login">login</a></li>
+       </ul>
+      <div class="box"> <form><input type="text" name="t" placeholder="type...."><input type="submit" name="q" placeholder="rechercher"></form></div>
+       </div></div>
+       
+   <div class="info">
+   <h1> <span class="auto-typing"></span> </h1>
+   <header id="showcase">
+   <h2> A propos de nous</h2>
+   <p>MAS BELIEZA, centre D'Esthétique & Coiffure, situé a chaussée de Charleroi 265A Saint-gilles</p>
+   <a href="#" class="button">En savois Plus</a>
+   </header>
+  <div class="p"> vous propose un séance offert de l'Epilation définitive au dernier technologie (Laser Diode)
+Pour plus d’inforamations rejoindre nous sur notre page facebook & Instagram ''beauty center by diana" ou contactez nous au 0489314027 ou 027204527.
+Situé en Brabant Wallon au centre de Rixensart, notre institut de beauté Amours de Filles vous accueille sur rendez-vous, du mardi au samedi. Notre patronne, Véronique Hella, esthéticienne diplômée, met toute son expérience au service de votre beauté. Toute notre équipe est à votre service pour vous prodiguer des soins esthétiques attentionnés et personnalisés. Nous vous attendons dans notre espace dédié à l’esthétique, dans une ambiance chaleureuse et cosy. Chez nous, dans notre institut, tout est mis en œuvre pour vous faire passer un agréable moment de bien-être et de détente. Vernis, extensions de cils, maquillage permanent, massage bien-être ou encore épilation définitive, n’hésitez pas à découvrir les nombreux soins que nous vous proposons. Pour tout rendez-vous, n’hésitez pas à nous contacter.</div>
+   
+   </div>
+       
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+let typed = new Typed('.auto-typing',{
+strings:['BIENVENUE'],
+typeSpeed: 100,
+backSpeed:100,
+loop: true,
+fadeOut: true,
+fadeOutClass:'typed-fade-out',
+fadeOutDelay: 500
+
+})
+
+
+</script>
+
+</body>
+</html>

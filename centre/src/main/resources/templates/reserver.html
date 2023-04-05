@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Reservation</title>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		outline: none;
+	}
+
+	body {
+		background: linear-gradient(45deg, #FC466B, #3F5EFB);
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: arial, sans-serif;
+	}
+
+	.container {
+		position: relative;
+	}
+
+	form {
+		background: rgba(255, 255, 255, .3);
+		padding: 4rem;
+		border-radius: 20px;
+		border-left: 1px solid rgba(255, 255, 255, .3);
+		border-top: 1px solid rgba(255, 255, 255, .3);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		-moz-backdrop-filter: blur(5px);
+		box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
+		text-align: center;
+	}
+
+	p {
+		color: white;
+		font-weight: 500;
+		opacity: .7;
+		font-size: 1.4rem;
+		margin-bottom: 60px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+
+	}
+
+	input {
+		background: white;
+		border: none;
+		border-left: 1px solid rgba(255, 255, 255, .3);
+		border-top: 1px solid rgba(255, 255, 255, .3);
+		padding: 0.5rem;
+		width: 200px;
+		border-radius: 50px;
+		margin-bottom: 32px;
+
+
+	}
+
+	select {
+		background: white;
+		border: none;
+		border-left: 1px solid rgba(255, 255, 255, .3);
+		border-top: 1px solid rgba(255, 255, 255, .3);
+		padding: 1rem;
+		width: 200px;
+		border-radius: 50px;
+	}
+
+	input[type="button"] {
+		cursor: pointer;
+		margin-top: 10px;
+		font-size: 1rem;
+		width: 150px;
+		background: rgb(255, 0, 128);
+	}
+
+	.drop {
+		background: rgba(255, 255, 255, .3);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		-moz-backdrop-filter: blur(10px);
+		position: absolute;
+		border-left: 1px solid rgba(255, 255, 255, .3);
+		border-top: 1px solid rgba(255, 255, 255, .3);
+		border-radius: 10px;
+		box-shadow: 10px 10px 60px -8px rgba(0, 0, 0 .2);
+	}
+
+	.drop-1 {
+		height: 80px;
+		width: 80px;
+		top: -20px;
+		left: -40px;
+		z-index: -1;
+	}
+
+	.drop-2 {
+		height: 80px;
+		width: 80px;
+		bottom: -30px;
+		right: 10px;
+	}
+
+	.drop-3 {
+		height: 100px;
+		width: 100px;
+		bottom: 120px;
+		right: -50px;
+		z-index: -1;
+	}
+
+	.drop-4 {
+		height: 120px;
+		width: 120px;
+		top: -60px;
+		right: -50px;
+	}
+
+	.drop-5 {
+		height: 60px;
+		width: 60px;
+		bottom: 170px;
+		left: 90px;
+	}
+
+	input[type="date"] {
+		background: white;
+		border: none;
+		border-left: 1px solid rgba(255, 255, 255, .3);
+		border-top: 1px solid rgba(255, 255, 255, .3);
+		padding: 0.5rem;
+		width: 200px;
+		border-radius: 50px;
+		margin-bottom: 32px;
+	}
+
+	.alert alert-success {
+		position: top;
+		background-color: pink;
+		border-left: 6px solid pink;
+	}
+
+	.container #danger {
+		background-color: #FFE4E1;
+		top: 5px;
+		right: 1px;
+		padding: 20px 40px;
+		border-radius: 5px;
+		border-left: 6px solid pink;
+		position: left;
+	}
+
+	.container #success {
+		background-color: #FFE4E1;
+		top: 5px;
+		right: 1px;
+		padding: 20px 40px;
+		border-radius: 5px;
+		border-left: 6px solid pink;
+		position: left;
+	}
+
+	.container #msg {
+		font-size: 19px;
+		color: #C71585;
+		margin: 0 20px;
+	}
+</style>
+
+<body>
+
+	<div class="container">
+		<div class="alert alert-danger" role="alert" id="success">
+			<div th:if="${error}" class="alert alert-danger" role="alert">
+				<span id="msg" th:text="${error}"></span>
+			</div>
+		</div>
+
+		<div th:if="${success}" class="alert alert-success" role="alert" id="danger">
+			<span class="ckek"><i class="fa fa-ckeck-circle"></i></span>
+			<span id="msg" th:text="${success}"></span>
+		</div>
+		<br>
+		<form method="post" th:action="@{/reserver}" th:object="${rendezVous}">
+			<p> Bienvenue</p>
+			Nom: <input type="text" th:field="*{nom}" placeholder="votre nom" name="nom"><br>
+			Prenom:<input type="text" th:field="*{prenom}" placeholder="votre prenom" name="prenom"><br>
+			Telephone:<input type="text" th:field="*{tele}" placeholder="votre numero" name="tele"><br>
+			Email:<input type="email" th:field="*{email}" placeholder="votre email" name="email"><br>
+			<label>choisir votre service:</label><select th:field="*{service}" name="service">
+				<option value="service">service</option>
+				<option value="spa">spa</option>
+				<option value="massage">massage</option>
+				<option value="maquillage">maquillage</option>
+				<option value="soins de cheveux">soins de cheveux</option>
+				<option value="soins de visage">soins de visage</option>
+				<option value="corps">corps</option>
+				<option value="coiffure">coiffure</option>
+				<option value="epilation">epilation</option>
+			</select><br><br>
+			Date de rendez-vous<input type="date" name="dateR"><br>
+			<a href=""><input class="btn" type="submit" value="reserver"></a>
+			<a href="/"><input type="button" value="retour"></a>
+		</form>
+		<div class="drop drop-1"></div>
+		<div class="drop drop-2"></div>
+		<div class="drop drop-3"></div>
+		<div class="drop drop-4"></div>
+	</div>
+
+</body>
+
+</html>

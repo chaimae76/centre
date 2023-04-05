@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Acheter </title>
+</head>
+
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+		}
+
+		label {
+			margin-bottom: 10px;
+			font-size: 18px;
+		}
+
+		input[type="submit"] {
+			padding: 10px;
+			margin-top: 20px;
+			font-size: 18px;
+			background-color: rgb(255, 0, 128);
+			color: white;
+			border: none;border-radius: 5px;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: rgb(255, 0, 128);
+		}
+.container{
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+ height: 100%;
+ padding: 20px 100px;
+}
+.container:after{
+content:'';
+position: absolute;
+left:0;
+top:0;
+width: 100%;
+height:100%;
+background:url("img/cntr.png") no-repeat center;
+background-size: cover;
+z-index: -1;
+filter: blur(50px);
+}
+.contact-box{
+max-width: 850px;
+display: grid;
+grid-tenplate-columns: repeat(2,1fr);
+justify-items:center;
+text-align:center;
+background-color:#fff;
+}
+.left{
+height: 100%;
+background:url("img/cntr.png") no-repeat center;
+background-size: cover;
+}
+.right{
+padding: 25px 40px;
+}
+  h1{
+padding-bottom: 10px;
+margin-bottom:10px;
+}
+ h1:after{
+content:'';
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+height:4px;
+width: 50px;
+border-radius: 2px;
+background-color: #2ecc71;
+}
+.field{
+width: 100%;
+padding: 0.5rem 1rem;
+outline: none;
+border: 2px solid rgba(0,0,0,0);
+background-color: rgba(230,230,230,0.6);
+font-size:1.1rem;
+margin-bootom: 22px;
+transition: .3s;
+}
+.header{
+background-color:pink;
+height:80px;
+margin:10px;
+}
+nav ul li{
+list-style-type:none;
+display:inline-block;
+padding:10px;
+}
+ul li a{
+color:#fff;
+letter-spacing:0.1rem;
+}
+ul li a:hover{
+color:#900C3F;
+text-decoration:underline;
+}
+.menu li{
+float:left;
+padding:35px;
+
+}
+.menu li a{
+text-decoration:none;
+
+}
+form{
+padding:35px;
+text-align:right;
+}
+#showcase{
+height: 50vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+text-align: center;
+padding: 0 20px;
+}
+#showcase h2{
+font-size: 50px;
+}
+#showcase p{
+font-size: 30px;
+}
+#showcase .button{
+ font-size: 18px;
+ text-decoration: none;
+ color: pink;
+ border: pink 1px solid;
+ padding: 10px 20px;
+ border-radius: 10px;
+ margin-top: 20px;
+}
+#showcase .button:hover{
+background: pink;
+color:#fff;
+
+}
+.p{
+font-size: 20px;
+font-family: cursive;
+text-align:justify;
+}
+.box input{
+position: relative;
+display: inline-block;
+font-size: 20px;
+box-sizing: border-box;
+transition: .5s;
+}
+.box input[type="text"]{
+border-radius:25px 0 0 25px;
+background: #fff;
+border: none;
+outline: none;
+padding:0 25px;
+}
+.box input[type="submit"]{
+position: relative;
+border-radius:25px 0 0 25px;
+border: none;
+outline:none;
+cursor: pointer;
+background: black;
+color:#fff;
+}
+
+	</style>
+
+<body>
+<div class="header">
+ <nav> 
+     <ul class="menu">
+       <li><a href="">accueil</a></li>
+       <li><a href="reserver">rendez-vous</a></li>
+       <li><a href="produits">nos produits</a></li>
+       <li><a href="service">services</a></li>
+       <li><a href="#">contacts</a></li>
+        <li><a href="login">login</a></li>
+       </ul>
+      
+       </nav></div>
+ <div class="container">
+ <div class="contact-box">
+ <div class="left"></div>
+	<div class="right">
+	<h1>Product Purchase Form</h1>
+	<form th:action="@{/acheter}" th:object="${commande}" method="post">
+		<label   for="product-id">Produit:</label>
+<select class="field" id="product-id" name="produit" th:field="*{produit}">
+    <option value="1">creme main</option>
+    <option value="6">creme corps</option>
+    <option value="12">creme de douche</option>
+    <option value="7">gel</option>
+    <option value="11">savon</option>
+    <option value="13">creme solaire</option>
+    <option value="3">serum</option>
+    <option value="8">creme hydratante</option>
+    <option value="9">avene trixera</option>
+    <option value="10">avene lotion</option>
+    <option value="4">parfum de cheveux</option>
+    <option value="14">protein</option>
+    <option value="5">vernis</option>
+    <option value="2">spray</option>
+</select>
+		<label for="quantity">Quantity:</label>
+		<input class="field" th:field="*{quantite}" type="number" id="quantity" name="quantite" required>
+		 nom: <input  class="field"th:field="*{nom}" type="text" id="nom" name="nom" required>
+		 prenom: <input class="field" th:field="*{prenom}" type="text" id="prenom" name="prenom" required>
+         addresse: <input  class="field"  th:field="*{adresse}" type="text" id="addresse" name="adresse" required>
+         cin: <input   class="field" th:field="*{cin}" type="text" id="cin" name="cin" required>
+         tele: <input class="field"  th:field="*{tele}"type="text" id="tele" name="tele" required>
+         <label for="email">Email:</label>
+         <input  class="field"th:field="*{email}" type="email" id="email" name="email" required>
+		<input class="field"type="submit" value="Purchase">
+	</form></div>
+	</div></div>
+</body>
+</html>
+</body>
+</html>

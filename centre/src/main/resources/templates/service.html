@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Service</title>
+</head>
+<style>
+  *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: non;
+  }
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: teko;
+  background: pink;
+  width:100%;
+  min-height: 100vh;
+}
+.wrapper{
+  width: 80%;
+  padding: 30px 0;
+  text-align: center;
+}
+.section-header{
+text-transform: uppercase;
+padding-bottom: 30px;
+font-size: 55px;
+color: #262626;
+letter-spacing:3px;
+}
+.content{
+padding:10%;
+}
+.content h2{
+font-size: 30px;
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+.content p{
+line-height: 1.5;
+}
+.main-content{
+ width: 100%;
+ display: grid;
+ grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+grid-row-gap: 25px;
+ grid-column-gap: 25px;
+}
+.main-content .box{
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 15px;
+  box-shadow: 15px 15px 40px rgba(0,0,0,0.15);
+  height: 250px;
+  overflow: hidden;
+}
+.main-content .box::before{
+content: '';
+position: absolute;
+top:0;
+left: 0;
+width: 5px;
+height: 100%;
+transition: all 0.5s ease-in-out;  
+}
+.main-content .box:hover::before{
+top: 0;
+right:calc(100% - 5px);
+z-index: 8;
+}
+.main-content .box img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.main-content .box .img-txt{
+ position: absolute;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background: rgba(255,255,255,0.9);
+ width: 100%;
+ height: 100%;
+ top: 0;
+ right: 100%;
+ transition: all 0.5s ease-in-out;
+}
+.main-content .box:hover .img-txt{
+top: 0;
+right: 0;
+}
+.btn{
+
+font-family: "Roboto", sans-serif;
+font-size: 18px;
+font-weight: bold;
+background:pink;
+width: 160px;
+padding: 20px;
+text-decoration: none;
+text-transform:uppercase;
+color:#fff;
+border-radius: 5px;
+cursor: pointer;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+-webkit-transition-property: box-shadow,transform;
+transition-property: box-shadow, transform;
+}
+.btn:hover, .btn:focus, .btn:active{
+box-shadow: 0 0 20px rgba(0,0,0,0.5);
+-webkit-transform: scale(1.1);
+transform: scale(1.1);
+
+}
+.header{
+background-color:pink;
+height:80px;
+margin:10px;
+}
+nav ul li{
+list-style-type:none;
+display:inline-block;
+padding:10px;
+}
+ul li a{
+color:#fff;
+letter-spacing:0.1rem;
+}
+ul li a:hover{
+color:#900C3F;
+text-decoration:underline;
+}
+.menu li{
+float:left;
+padding:35px;
+
+}
+.menu li a{
+text-decoration:none;
+
+}
+form{
+padding:35px;
+text-align:right;
+}
+</style>
+<body>
+
+<div class="wrapper">
+  <h2 class="section-header"> Nos Services </h2>
+  <div class="main-content">
+  <div class="box">
+  <img src="img/spa.jpg" alt="img1">
+  <div class="img-txt">
+  <div class="content">
+  <h2>LUXURY DAY SPA</h2>
+  <p>Enjoy the relaxation and overall feeling of wellness that comes with a visit to Centre Spa’s luxury day spa in Portage. From our high performance facials and exfoliating body treatments to massage therapy.</p>
+  </div>
+  </div>
+  </div>
+  <div class="box">
+  <img src="img/soins-corps-la-oon-island-6-980.jpg" alt="img1">
+  <div class="img-txt">
+  <div class="content">
+  <h2>Massage</h2>
+  <p>Manipulation mécanique de la peau, du tissu conjonctif et les muscles par des étirements, de former et de relance de pression</p>
+  </div>
+  </div>
+  </div>
+  <div class="box">
+  <img src="img/massage.jpg" alt="img1">
+  <div class="img-txt">
+  <div class="content">
+  <h2>soins</h2>
+  <p>L’institut Léna Beauté propose également des soins beauté pour combler toutes vos attentes: Epilation lumière pulsée,</p>
+  </div>
+  </div>
+  </div>
+  <div class="box">
+  <img src="img/maquillage-mariage.jpg" alt="img1">
+  <div class="img-txt">
+  <div class="content">
+  <h2>HAIRCUT & STYLES</h2>
+  <p>From pixie cuts and shaggy bobs to long layers and hair extensions, our talented cosmetologists will work with you to create a look that you will love.</p><br>
+  </div>
+  </div>
+  </div>
+</div></div>
+<form> <a href="reserver"><input class="btn" type="button" value="reserver"></a>
+
+</form>
+<br><br>
+<br>
+</body>
+</html>
